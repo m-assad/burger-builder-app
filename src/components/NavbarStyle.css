@@ -1,0 +1,41 @@
+.NavigationItems {
+  margin-bottom: 50px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  height: 100%;
+  background-color: #8f5c2c;
+}
+.NavigationItem {
+  margin: 10px 10px;
+  box-sizing: border-box;
+}
+
+.appLogo{
+  background-image: url(../assets/burger-logo.png);
+  background-size: 4rem;
+  height: 3rem;
+  width: 100%;
+  display: table;
+  background-repeat: no-repeat;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover,
+a:active,
+a.active {
+  background-color: #8f5c2c;
+  border-bottom: 4px solid #40A4C8;
+  color:#40A4C8
+}
+
+.float-right{
+  float: right;
+  margin-top: 10px;
+}
