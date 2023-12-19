@@ -20,6 +20,7 @@
   width: 100%;
   display: table;
   background-repeat: no-repeat;
+  text-decoration: none;
 }
 
 a {
@@ -27,12 +28,13 @@ a {
   text-decoration: none;
 }
 
-a:hover,
-a:active,
-a.active {
+a.NavigationItem:hover,
+a.NavigationItem:active,
+a.NavigationItem.active {
   background-color: #8f5c2c;
   border-bottom: 4px solid #40A4C8;
-  color:#40A4C8
+  color:#40A4C8;
+  padding-bottom: 1rem;
 }
 
 .float-right{

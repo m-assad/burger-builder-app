@@ -1,15 +1,14 @@
+import { Link } from "react-router-dom";
 import './NavbarStyle.css';
 export default  function Navbar () {
   return (
     <div className='NavigationItems'>
-      <div className='appLogo'>
-      </div>
+      <Link to='/' className='appLogo'></Link>
       <div className='float-right'>
-        <a href="#" className='NavigationItem'>Burgers</a>
-        <a href="#" className='NavigationItem'>Login</a>
+        <Link to='/' className='NavigationItem'>Burgers</Link>
+        <Link to='/auth' className='NavigationItem'>Logout </Link>
       </div>
-
     </div>
   );
-};
+}
 
