@@ -1,21 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { Footer } from './Footer';
 import Navbar from './Navbar';
 
 import './BurgerStyle.css';
 
-
-import { DEFAULT_PRICE } from '../constants';
-
 const Burger = () => {
-  const [ingredients, setingredients] = useState({
-    lettuce: 0,
-    tomato: 0,
-    cheese: 0,
-    meat: 0,
-  })
-
-  const [price, setPrice] = useState(DEFAULT_PRICE)
+  const ingredients = useSelector((state) => state.ingredients);
 
   const burgerContent = () => {
     let burger = [];
@@ -44,7 +35,7 @@ const Burger = () => {
         {burgerContent()}
         <div className='bottomSide'></div>
       </div>
-      <Footer ingredients={ingredients} setingredients={setingredients} price={price} setPrice={setPrice} />
+      <Footer />
     </>
   );
 }

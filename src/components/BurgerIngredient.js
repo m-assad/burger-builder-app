@@ -1,12 +1,23 @@
+/* eslint-disable react/prop-types */
 import React from 'react'
+import { useDispatch } from 'react-redux';
+import { addIngredient, removeIngredient } from '../actions/burgerActions';
 
-// eslint-disable-next-line react/prop-types
-export const BurgerIngredient = ({name, disabled, addIngredient, removeIngredient}) => {
+export const BurgerIngredient = ({name, disabled}) => {
+  const dispatch = useDispatch();
+
+  const handleAddIngredient = () => {
+    dispatch(addIngredient(name.toLowerCase()));
+  };
+
+  const handleRemoveIngredient = () => {
+    dispatch(removeIngredient(name.toLowerCase()));
+  };
   return (
     <tr>
-        <td><p>{name}</p></td>
-        <td><button className='ingrBtn' disabled={disabled} onClick={removeIngredient}>Less</button></td>
-        <td><button className='ingrBtn' onClick={addIngredient}>More</button></td>
-      </tr>
+      <td><p>{name}</p></td>
+      <td><button className='ingrBtn' disabled={disabled} onClick={handleRemoveIngredient}>Less</button></td>
+      <td><button className='ingrBtn' onClick={handleAddIngredient}>More</button></td>
+    </tr>
   )
 }
