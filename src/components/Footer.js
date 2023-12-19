@@ -6,6 +6,8 @@ import { addIngredient, removeIngredient } from '../actions/burgerActions';
 import { BurgerIngredient } from './BurgerIngredient';
 import { useNavigate } from 'react-router-dom';
 
+import * as Styles from './FooterStyles';
+
 import { DEFAULT_PRICE } from '../constants';
 
 export const Footer = () => {
@@ -27,15 +29,15 @@ export const Footer = () => {
   const toSignup = () => navigate('/auth')
 
   return (
-    <div className='ingredientsBlock'>
-      <p>Current Price: ${price}</p>
+    <Styles.IngredientsBlock>
+      <Styles.IngredientsText>Current Price: ${price}</Styles.IngredientsText>
       <table>
         <BurgerIngredient name='Lettuce' disabled={ingredients.lettuce ? false : true} addIngredient={() => addRemoveIngredient('add', 'lettuce')} removeIngredient={() => addRemoveIngredient('remove', 'lettuce')}/>
         <BurgerIngredient name='Tomato' disabled={ingredients.tomato ? false : true} addIngredient={() => addRemoveIngredient('add', 'tomato')} removeIngredient={() => addRemoveIngredient('remove', 'tomato')}/>
         <BurgerIngredient name='Cheese' disabled={ingredients.cheese ? false : true} addIngredient={() => addRemoveIngredient('add', 'cheese')} removeIngredient={() => addRemoveIngredient('remove', 'cheese')}/>
         <BurgerIngredient name='Meat' disabled={ingredients.meat ? false : true} addIngredient={() => addRemoveIngredient('add', 'meat')} removeIngredient={() => addRemoveIngredient('remove', 'meat')}/>
       </table>
-      <button disabled={price > DEFAULT_PRICE ? false : true} onClick={toSignup} className='signup-btn'>Sign up to order</button>
-    </div>
+      <Styles.SignupButton disabled={price > DEFAULT_PRICE ? false : true} onClick={toSignup}>Sign up to order</Styles.SignupButton>
+    </Styles.IngredientsBlock>
   )
 }

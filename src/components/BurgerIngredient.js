@@ -3,6 +3,8 @@ import React from 'react'
 import { useDispatch } from 'react-redux';
 import { addIngredient, removeIngredient } from '../actions/burgerActions';
 
+import * as Styles from './BurgerIngredientsStyles';
+
 export const BurgerIngredient = ({name, disabled}) => {
   const dispatch = useDispatch();
 
@@ -16,8 +18,8 @@ export const BurgerIngredient = ({name, disabled}) => {
   return (
     <tr>
       <td><p>{name}</p></td>
-      <td><button className='ingrBtn' disabled={disabled} onClick={handleRemoveIngredient}>Less</button></td>
-      <td><button className='ingrBtn' onClick={handleAddIngredient}>More</button></td>
+      <td><Styles.IngrBtn disabled={disabled} onClick={handleRemoveIngredient}>Less</Styles.IngrBtn></td>
+      <td><Styles.IngrBtn onClick={handleAddIngredient}>More</Styles.IngrBtn></td>
     </tr>
   )
 }
