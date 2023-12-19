@@ -1,12 +1,10 @@
 /* eslint-disable react/prop-types */
 import React, { useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
 import './SignupStyle.css';
 const Signup = (props) => {
   const userName = useRef();
   const password = useRef();
   const email = useRef();
-  const navigate = useNavigate();
 
   function submitHandler() {
     const userData = {
@@ -16,7 +14,6 @@ const Signup = (props) => {
     };
 
     props.usersHandeler(userData);
-    navigate('/');
   }
 
   return (

@@ -3,6 +3,8 @@ import { BrowserRouter } from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import reportWebVitals from './reportWebVitals';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import store from './stores/store';
 import App from './App';
 import './index.css';
@@ -13,6 +15,7 @@ root.render(
     <BrowserRouter>
       <App />
     </BrowserRouter>
+    <ToastContainer />
   </Provider>
 );
 
