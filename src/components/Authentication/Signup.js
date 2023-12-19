@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import './SignupStyle.css';
 const Signup = (props) => {
   const userName = useRef();
   const password = useRef();
